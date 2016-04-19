@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:SSDP_Service/SSDP_Service.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SSDP_Client/SSDP_Client.xcodeproj">
+   </FileRef>
+</Workspace>
