@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		4F29CFB31CC66DA1003796FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F29CFB21CC66DA1003796FB /* main.m */; };
 		4F29CFB61CC66DA1003796FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F29CFB51CC66DA1003796FB /* AppDelegate.m */; };
-		4F29CFB91CC66DA1003796FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F29CFB81CC66DA1003796FB /* ViewController.m */; };
 		4F29CFBC1CC66DA1003796FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F29CFBA1CC66DA1003796FB /* Main.storyboard */; };
 		4F29CFBE1CC66DA1003796FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F29CFBD1CC66DA1003796FB /* Assets.xcassets */; };
 		4F29CFC11CC66DA1003796FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F29CFBF1CC66DA1003796FB /* LaunchScreen.storyboard */; };
+		4F29CFEA1CC67708003796FB /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F29CFE91CC67708003796FB /* ListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +20,12 @@
 		4F29CFB21CC66DA1003796FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F29CFB41CC66DA1003796FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F29CFB51CC66DA1003796FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4F29CFB71CC66DA1003796FB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4F29CFB81CC66DA1003796FB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4F29CFBB1CC66DA1003796FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F29CFBD1CC66DA1003796FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F29CFC01CC66DA1003796FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F29CFC21CC66DA1003796FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F29CFE81CC67708003796FB /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		4F29CFE91CC67708003796FB /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +60,13 @@
 			children = (
 				4F29CFB41CC66DA1003796FB /* AppDelegate.h */,
 				4F29CFB51CC66DA1003796FB /* AppDelegate.m */,
-				4F29CFB71CC66DA1003796FB /* ViewController.h */,
-				4F29CFB81CC66DA1003796FB /* ViewController.m */,
 				4F29CFBA1CC66DA1003796FB /* Main.storyboard */,
 				4F29CFBD1CC66DA1003796FB /* Assets.xcassets */,
 				4F29CFBF1CC66DA1003796FB /* LaunchScreen.storyboard */,
 				4F29CFC21CC66DA1003796FB /* Info.plist */,
 				4F29CFB11CC66DA1003796FB /* Supporting Files */,
+				4F29CFE81CC67708003796FB /* ListTableViewController.h */,
+				4F29CFE91CC67708003796FB /* ListTableViewController.m */,
 			);
 			path = SSDP_Client;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F29CFB91CC66DA1003796FB /* ViewController.m in Sources */,
 				4F29CFB61CC66DA1003796FB /* AppDelegate.m in Sources */,
 				4F29CFB31CC66DA1003796FB /* main.m in Sources */,
+				4F29CFEA1CC67708003796FB /* ListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

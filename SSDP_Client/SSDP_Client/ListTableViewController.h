@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListTableViewController.h
 //  SSDP_Client
 //
 //  Created by Claris on 2016.04.19.Tuesday.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ListTableViewController : UITableViewController
 
 @end
-
