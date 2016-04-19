@@ -7,6 +7,7 @@
 //
 
 #import "ListTableViewController.h"
+#import "TICKSSDP_Client.h"
 
 @interface ListTableViewController ()
 @property (nonatomic, strong) NSMutableArray *resultList;
@@ -27,7 +28,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +38,13 @@
 #pragma mark - Response
 - (IBAction)refreshBtnAction:(id)sender {
     // 重新搜索设备
+    TICKSSDP_Client *client = [TICKSSDP_Client sharedInstance];
+    
+    if (![client startOnQueue:nil]) {
+        NSLog(@"start error");
+        return;
+    }
+    [client sendDiscoverMessage:nil];
 }
 
 #pragma mark - Setter & Getter
