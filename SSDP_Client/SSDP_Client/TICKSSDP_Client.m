@@ -40,6 +40,7 @@
     if (self.isBinded) {
         return true;
     }
+    [self.serviceList removeAllObjects];
     _binded = true;
     NSError *error = nil;
     if (!_udpSocket) {
@@ -139,17 +140,18 @@
 }
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
     NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    if (![message containsString:@"urn:gateway-tick-site:device:gateway:release"]) {
-        NSLog(@"receive one message, but not what I want");
-        return;
-    }
+    
+//    if (![message containsString:@"urn:gateway-tick-site:device:gateway:release"]) {
+//        NSLog(@"receive one message, but not what I want");
+//        return;
+//    }
     
     NSString *ip =[GCDAsyncUdpSocket hostFromAddress:address];
     uint16_t port = [GCDAsyncUdpSocket portFromAddress:address];
-    NSLog(@"%@:%d, %@",ip, port, message);
+    NSLog(@"\n%@:%d\n\n%@",ip, port, message);
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.serviceList addObject:message];
+        [[self mutableArrayValueForKey:@"serviceList"] addObject:message];//方便observer
     });
     
 }

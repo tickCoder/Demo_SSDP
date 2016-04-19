@@ -14,6 +14,7 @@
 		4F29CFC11CC66DA1003796FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F29CFBF1CC66DA1003796FB /* LaunchScreen.storyboard */; };
 		4F29CFEA1CC67708003796FB /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F29CFE91CC67708003796FB /* ListTableViewController.m */; };
 		4F29CFED1CC67B64003796FB /* TICKSSDP_Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F29CFEC1CC67B64003796FB /* TICKSSDP_Client.m */; };
+		4F5AF72B1CC68C9F00A70914 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AF72A1CC68C9F00A70914 /* DetailViewController.m */; };
 		F3D7D18169B6C78CA258E3CD /* Pods_SSDP_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83EF3D75BB3B111E8C92C06 /* Pods_SSDP_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,8 @@
 		4F29CFE91CC67708003796FB /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		4F29CFEB1CC67B64003796FB /* TICKSSDP_Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TICKSSDP_Client.h; sourceTree = "<group>"; };
 		4F29CFEC1CC67B64003796FB /* TICKSSDP_Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TICKSSDP_Client.m; sourceTree = "<group>"; };
+		4F5AF7291CC68C9F00A70914 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4F5AF72A1CC68C9F00A70914 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		A83EF3D75BB3B111E8C92C06 /* Pods_SSDP_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSDP_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F4FA5A41328731BA7B314 /* Pods-SSDP_Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDP_Client.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SSDP_Client/Pods-SSDP_Client.release.xcconfig"; sourceTree = "<group>"; };
 		EC8A603AF58B34FB2FA69971 /* Pods-SSDP_Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDP_Client.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SSDP_Client/Pods-SSDP_Client.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				4F29CFE91CC67708003796FB /* ListTableViewController.m */,
 				4F29CFEB1CC67B64003796FB /* TICKSSDP_Client.h */,
 				4F29CFEC1CC67B64003796FB /* TICKSSDP_Client.m */,
+				4F5AF7291CC68C9F00A70914 /* DetailViewController.h */,
+				4F5AF72A1CC68C9F00A70914 /* DetailViewController.m */,
 			);
 			path = SSDP_Client;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5AF72B1CC68C9F00A70914 /* DetailViewController.m in Sources */,
 				4F29CFB61CC66DA1003796FB /* AppDelegate.m in Sources */,
 				4F29CFB31CC66DA1003796FB /* main.m in Sources */,
 				4F29CFEA1CC67708003796FB /* ListTableViewController.m in Sources */,
