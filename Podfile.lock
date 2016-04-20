@@ -1,4 +1,5 @@
 PODS:
+  - ARNAlert (0.2.2)
   - CocoaAsyncSocket (7.4.3):
     - CocoaAsyncSocket/All (= 7.4.3)
   - CocoaAsyncSocket/All (7.4.3):
@@ -8,9 +9,11 @@ PODS:
   - CocoaAsyncSocket/RunLoop (7.4.3)
 
 DEPENDENCIES:
+  - ARNAlert
   - CocoaAsyncSocket
 
 SPEC CHECKSUMS:
+  ARNAlert: eeba16d51b5eaa0369e5e6d64fd0c6b1d6253164
   CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
 
 COCOAPODS: 0.39.0

@@ -8,6 +8,7 @@
 
 #import "TICKSSDP_Client.h"
 #import <CocoaAsyncSocket/GCDAsyncUdpSocket.h>
+#import <ARNAlert/ARNAlert.h>
 
 @interface TICKSSDP_Client () <GCDAsyncUdpSocketDelegate>
 @property (nonatomic, strong, readwrite) NSMutableArray *serviceList;
@@ -53,7 +54,7 @@
     
     [_udpSocket setIPv6Enabled:NO];
     
-    if (![_udpSocket bindToPort:0 error:&error]) {
+    if (![_udpSocket bindToPort:1900 error:&error]) {
         NSLog(@"%@", error);
         return false;
     }
@@ -106,8 +107,11 @@
     [message appendFormat:@"MAN: \"ssdp:discover\"\r\n"];
     [message appendFormat:@"MX: 5\r\n"];
     //[message appendString:@"USER-AGENT: Client/iOS/9.3 SDK/iOS/4.3.20160405\r\n"];
-    //[message appendFormat:@"ST:urn:gateway-tick-site:device:gateway:release\r\n"];
-    [message appendString:@"ST: ssdp:all\r\n"];
+    if ([aMessage.lowercaseString isEqualToString:@"all"]) {
+        [message appendString:@"ST: ssdp:all\r\n"];
+    } else {
+        [message appendFormat:@"ST:urn:gateway-tick-site:device:gateway:release\r\n"];
+    }
     
     // 以下为自定义字段
     [message appendString:@"TICK_SEARCH_CODE: ABCDEFG9720348HD\r\n"];
@@ -140,20 +144,31 @@
 }
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
     NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-//    if (![message containsString:@"urn:gateway-tick-site:device:gateway:release"]) {
-//        NSLog(@"receive one message, but not what I want");
-//        return;
-//    }
-    
     NSString *ip =[GCDAsyncUdpSocket hostFromAddress:address];
     uint16_t port = [GCDAsyncUdpSocket portFromAddress:address];
     NSLog(@"\n%@:%d\n\n%@",ip, port, message);
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[self mutableArrayValueForKey:@"serviceList"] addObject:message];//方便observer
-    });
     
+    if ([message containsString:@"ssdp:alive"] && [message containsString:@"urn:gateway-tick-site:device:gateway:release"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ARNAlert showNoActionAlertWithTitle:@"ssdp:alive" message:message buttonTitle:@"ok"];
+        });
+        return;
+    }
+    
+    if ([message containsString:@"ssdp:byebye"] && [message containsString:@"urn:gateway-tick-site:device:gateway:release"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ARNAlert showNoActionAlertWithTitle:@"ssdp:byebye" message:message buttonTitle:@"ok"];
+        });
+        return;
+    }
+    
+    if ([message containsString:@"urn:gateway-tick-site:device:gateway:release"] &&
+        ![message containsString:@"ssdp:discover"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self mutableArrayValueForKey:@"serviceList"] addObject:message];//方便observer
+        });
+        return;
+    }
 }
 - (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError *)error {
     NSLog(@"%@", error);

@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lKK-Q1-H1J">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="GAW-MP-XPb">
+            <objects>
+                <navigationController id="lKK-Q1-H1J" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3HI-14-rS9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oiL-aT-5qh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JUC-CX-pI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-793" y="368"/>
+        </scene>
+        <!--Service-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +33,69 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oal-qA-WaU">
+                                <rect key="frame" x="20" y="103" width="60" height="30"/>
+                                <state key="normal" title="开始监听"/>
+                                <connections>
+                                    <action selector="listenBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Noz-Zd-4x9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9p-gk-dqw">
+                                <rect key="frame" x="20" y="151" width="60" height="30"/>
+                                <state key="normal" title="发送回应"/>
+                                <connections>
+                                    <action selector="responseBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iF6-mn-dfZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUt-NI-T02">
+                                <rect key="frame" x="20" y="200" width="99" height="30"/>
+                                <state key="normal" title="发送ssdp:alive"/>
+                                <connections>
+                                    <action selector="aliveBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z37-e5-eqk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-cV-AMp">
+                                <rect key="frame" x="20" y="243" width="117" height="30"/>
+                                <state key="normal" title="发送ssdp:byebye"/>
+                                <connections>
+                                    <action selector="byebyeBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iA2-bp-zHx"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nst-fZ-KBw">
+                                <rect key="frame" x="20" y="281" width="560" height="299"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nst-fZ-KBw" firstAttribute="leading" secondItem="vPb-cV-AMp" secondAttribute="leading" id="8pJ-Ka-GjK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oal-qA-WaU" secondAttribute="leading" id="DyD-HQ-Fri"/>
+                            <constraint firstItem="c9p-gk-dqw" firstAttribute="top" secondItem="oal-qA-WaU" secondAttribute="bottom" constant="18" id="EbX-Me-Jwi"/>
+                            <constraint firstItem="VUt-NI-T02" firstAttribute="leading" secondItem="c9p-gk-dqw" secondAttribute="leading" id="Ffn-eM-eBh"/>
+                            <constraint firstItem="vPb-cV-AMp" firstAttribute="leading" secondItem="VUt-NI-T02" secondAttribute="leading" id="PqL-be-m4I"/>
+                            <constraint firstItem="nst-fZ-KBw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uc3-rW-upe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nst-fZ-KBw" secondAttribute="bottom" constant="20" id="YPp-dM-o2u"/>
+                            <constraint firstItem="vPb-cV-AMp" firstAttribute="top" secondItem="VUt-NI-T02" secondAttribute="bottom" constant="13" id="clU-gb-SSV"/>
+                            <constraint firstItem="nst-fZ-KBw" firstAttribute="top" secondItem="vPb-cV-AMp" secondAttribute="bottom" constant="8" id="d6o-ht-iX3"/>
+                            <constraint firstItem="c9p-gk-dqw" firstAttribute="leading" secondItem="oal-qA-WaU" secondAttribute="leading" id="txF-hO-LB5"/>
+                            <constraint firstItem="VUt-NI-T02" firstAttribute="top" secondItem="c9p-gk-dqw" secondAttribute="bottom" constant="19" id="yiX-by-2uh"/>
+                            <constraint firstItem="oal-qA-WaU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="yy0-Qj-JNF"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Service" id="WcS-L3-S0j"/>
+                    <connections>
+                        <outlet property="listenBtn" destination="oal-qA-WaU" id="Lc3-XA-2y2"/>
+                        <outlet property="msgTextView" destination="nst-fZ-KBw" id="Now-vd-h29"/>
+                        <outlet property="responseBtn" destination="c9p-gk-dqw" id="lXJ-Se-l3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-109" y="368"/>
         </scene>
     </scenes>
 </document>

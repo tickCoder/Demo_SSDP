@@ -53,6 +53,7 @@
 #pragma mark - Response
 - (IBAction)refreshBtnAction:(id)sender {
     [self.resultList removeAllObjects];
+    [self.tableView reloadData];
     // 重新搜索设备
     TICKSSDP_Client *client = [TICKSSDP_Client sharedInstance];
     
@@ -61,6 +62,19 @@
         return;
     }
     [client sendDiscoverMessage:nil];
+}
+
+- (IBAction)all_refreshBtnAction:(id)sender {
+    [self.resultList removeAllObjects];
+    [self.tableView reloadData];
+    // 重新搜索设备
+    TICKSSDP_Client *client = [TICKSSDP_Client sharedInstance];
+    
+    if (![client startOnQueue:nil]) {
+        NSLog(@"start error");
+        return;
+    }
+    [client sendDiscoverMessage:@"all"];
 }
 
 #pragma mark - Setter & Getter

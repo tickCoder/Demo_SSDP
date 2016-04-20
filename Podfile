@@ -13,6 +13,7 @@ xcodeproj 'SSDP_Service/SSDP_Service.xcodeproj'
 
 def shared_pods
 pod 'CocoaAsyncSocket'  
+pod 'ARNAlert'
 end
 
 

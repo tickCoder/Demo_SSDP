@@ -9,8 +9,7 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
-
+@property (nonatomic, weak) IBOutlet UITextView *msgTextView;
 @end
 
 @implementation DetailViewController
@@ -22,7 +21,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.messageLabel.text = self.message;
+    self.msgTextView.text = self.message;
 }
 
 - (void)didReceiveMemoryWarning {
